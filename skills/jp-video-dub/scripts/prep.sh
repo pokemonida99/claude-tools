@@ -26,8 +26,9 @@ ls stems/htdemucs_ft/orig/
 
 echo "== 日文逐字稿(在人聲軌上跑)"
 ffmpeg -v error -y -i stems/htdemucs_ft/orig/vocals.wav -ac 1 -ar 16000 src/vocals16k.wav
+WOPT=(); [[ -n "$JA_PROMPT" ]] && WOPT=(--initial_prompt "$JA_PROMPT")
 whisper src/vocals16k.wav --model medium --language ja --word_timestamps True --output_format json \
-  --output_dir src --condition_on_previous_text False ${JA_PROMPT:+--initial_prompt "$JA_PROMPT"} > /dev/null 2>&1
+  --output_dir src --condition_on_previous_text False $WOPT > /dev/null 2>&1
 python3 - <<'EOF'
 import json
 for s in json.load(open('src/vocals16k.json'))['segments']:

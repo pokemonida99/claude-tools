@@ -80,6 +80,8 @@ whisper 在沒人說話的段落會幻聽（例如「ご視聴ありがとうご
 - 音色庫搜尋 `Taiwan`，網址加 `&gender=male`／`female`；看描述、年齡、用途。
 - 用同樣三四句（旁白一句、激動一句、喊招一句）試配兩三個候選，每次約 130 點。
 - 第一次給使用者兩個音色的完整版讓他挑；定案後不用再做對照版。
+- 使用者指定過的音色：少年旁白用「James - Young, Friendly and Positive」；女聲、可愛角色用「Ellen - Sweet」（使用者說「Elle sweet」就是它）。使用者直接指定音色時不用做對照版。
+- 短劇式的片（多個角色輪流講話）目前都用同一個音色配，靠每句的語氣標記分出通報、喊招、撒嬌；交付時要說明這一點。
 
 ## 6. ElevenLabs 生成
 
@@ -149,6 +151,7 @@ $S/check_frames.sh "out/<檔名前綴>_中文配音_中日字幕.mp4"
 | 音色選太成熟 | 先量原旁白音高 |
 | zsh 迴圈裡 `$PY` 沒被拆成多個字 | 用 `${=PY}` |
 | yt-dlp 進度列塞滿輸出 | `--no-progress` |
+| zsh 腳本裡把變數取名 `PROMPT` 就報錯 | `PROMPT` 是 zsh 的特殊變數，換別的名字 |
 | 第二次下載 Chrome 卡「允許多個下載」 | 檔案其實在 `~/Downloads/.com.google.Chrome.*` 暫存檔，可直接複製 |
 
 改了流程或腳本，要改這個 skill（`~/claude-tools/skills/jp-video-dub/`），不要只改專案裡的複本。
