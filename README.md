@@ -5,6 +5,7 @@ Claude Code 用的工作流程工具，讓多台 Mac 可以同步使用：
 | 內容 | 說明 |
 |---|---|
 | `skills/runninghub-h3/` | Claude Code skill：在 RunningHub 用 MiniMax H3 生成 AI 影片（多參考圖、音訊）、下載、選片、組片的完整流程與腳本 |
+| `skills/jp-video-dub/` | Claude Code skill：外語影片做成中文配音＋中日雙語字幕（Demucs 抽掉原旁白、ElevenLabs 配音、逐句對回原時間、燒字幕、輸出三個版本）的流程與腳本 |
 | `tools/gpt-image/gen.sh` | 用 GPT 生圖（透過 ChatGPT 桌面版內建的 codex 命令列工具，不需要 API key、不開瀏覽器） |
 
 ## 在一台新的 Mac 上安裝
